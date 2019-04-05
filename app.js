@@ -11,6 +11,7 @@ var cors = require("cors");
 var logger = require("morgan");
 var MongoStore = require("connect-mongo")(session);
 
+
 // var json2csv = require('express-json2csv');
 // var busboy = require('connect-busboy');
 // var busboyBodyParser = require('busboy-body-parser');
@@ -117,6 +118,7 @@ app.use(
   webpackMiddleware(compiler, {
     publicPath: config.output.publicPath
   })
+
 );
 app.use(webpackHotMiddleware(compiler)); // And this line
 
@@ -138,6 +140,7 @@ app.use(function(req, res, next) {
   var err = new Error("Not Found");
   err.status = 404;
   next(err);
+
 });
 
 // error handlers
